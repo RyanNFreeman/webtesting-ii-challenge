@@ -1,34 +1,19 @@
-import React from 'react'
+import React from 'react';
 
-import Display from './Display'
-
-
-class Dashboard extends React.Component {
-    state = {
-        strike: 0,
-        ball: 0,
-        foul: 0,
-        hit: 0
-    }
-
-    render(){
-    return (
-        <>
-            <Display score={this.state} />
-
-            <h1>Dashboard</h1>
-            <button onClick={this.clickHandler}>Strike</button>
-            <button>Ball</button>
-            <button>Foul</button>
-            <button>Hit</button>
-            
-        </>
-    )}
-    clickHandler = e => {
-        this.setState={
-            strike: 'hello'
-        }
-    }
+ const Dashboard = props =>{
+    const { foulBtn, strikeBtn, ballBtn, resetBtn } = props;
+    return(
+        <div>
+            <div>
+                <button onClick={strikeBtn}>strike</button>
+                <button onClick={ballBtn}>ball</button>
+                <button onClick={foulBtn}>foul</button>
+            </div>
+            <div>
+                <h2>Lets Play Ball</h2>
+            </div>
+        </div>
+    )
 }
 
-export default Dashboard
+ export default Dashboard
